@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "407659973165",
+    "project_id": "eligantmediaassignment",
+    "storage_bucket": "eligantmediaassignment.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407659973165:android:02b35c2784583eff8046a4",
+        "android_client_info": {
+          "package_name": "com.example.mobile_app_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_y1a6lyNpdYBdAYRNyFT0jGCf2rbfdUg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
