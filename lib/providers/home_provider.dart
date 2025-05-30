@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:mobile_app_test/model/hotel_list_result_model.dart';
 import 'dart:developer' as dev;
-
 import 'package:mobile_app_test/utils/custom_http.dart';
 import 'package:mobile_app_test/utils/url_constant.dart';
 import 'package:mobile_app_test/widgets/common_snackbar_message.dart';

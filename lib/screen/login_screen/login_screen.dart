@@ -3,7 +3,6 @@ import 'package:mobile_app_test/providers/auth_provider.dart';
 import 'package:mobile_app_test/utils/colors.dart';
 import 'package:mobile_app_test/utils/main_body.dart';
 import 'package:mobile_app_test/widgets/common_loader.dart';
-import 'package:mobile_app_test/widgets/common_textfeild.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 

@@ -121,19 +121,6 @@ class _HomePageState extends State<HomePage> {
                                       actions: [
                                         ElevatedButton(
                                           style: ElevatedButton.styleFrom(
-                                              backgroundColor: Colors.red),
-                                          onPressed: () {
-                                            authProvider.userLogOut(context);
-                                          },
-                                          child: Text(
-                                            "Yes",
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                        ),
-                                        ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
                                               backgroundColor:
                                                   Colors.green.shade900),
                                           onPressed: () {
@@ -145,7 +132,20 @@ class _HomePageState extends State<HomePage> {
                                               color: Colors.white,
                                             ),
                                           ),
-                                        )
+                                        ),
+                                        ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              backgroundColor: Colors.red),
+                                          onPressed: () {
+                                            authProvider.userLogOut(context);
+                                          },
+                                          child: Text(
+                                            "Yes",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
                                       ],
                                     );
                                   },

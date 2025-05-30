@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app_test/main.dart';
 import 'package:mobile_app_test/providers/home_provider.dart';
 import 'package:mobile_app_test/utils/colors.dart';
 import 'package:mobile_app_test/utils/main_body.dart';

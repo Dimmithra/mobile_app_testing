@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mobile_app_test/utils/colors.dart';
-import 'package:provider/provider.dart';
 
 class CommonTextFeild extends StatefulWidget {
   const CommonTextFeild({
