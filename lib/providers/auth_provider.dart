@@ -31,7 +31,7 @@ class AuthProvider extends ChangeNotifier {
         idToken: googleAuth?.idToken,
       );
 
-      dev.log("sign credintals ${credential} -- user-- ${googleUser}");
+      // dev.log("sign credintals ${credential} -- user-- ${googleUser}");
       final UserCredential userCredential =
           await FirebaseAuth.instance.signInWithCredential(credential);
       if (userCredential.user != null) {
@@ -46,7 +46,7 @@ class AuthProvider extends ChangeNotifier {
         );
       }
     } catch (e) {
-      dev.log(e.toString());
+      // dev.log(e.toString());
       SnackBarUtils.showSnackBar(
         style: SnackBarStyle(backgroundColor: kErrorMessageColor),
         context,
@@ -69,7 +69,7 @@ class AuthProvider extends ChangeNotifier {
     try {
       setloadingAlreadySingCheck(true);
       final user = FirebaseAuth.instance.currentUser;
-      dev.log("check user record $user");
+      // dev.log("check user record $user");
       if (user != null) {
         await Future.delayed(const Duration(seconds: 1));
         Navigator.pushReplacement(
@@ -90,7 +90,7 @@ class AuthProvider extends ChangeNotifier {
         );
       }
     } catch (e) {
-      dev.log(e.toString());
+      // dev.log(e.toString());
     } finally {
       setloadingAlreadySingCheck(true);
     }
@@ -122,7 +122,7 @@ class AuthProvider extends ChangeNotifier {
         },
       );
     } catch (e) {
-      dev.log('Logout error: $e');
+      // dev.log('Logout error: $e');
       SnackBarUtils.showSnackBar(
         style: SnackBarStyle(backgroundColor: kErrorMessageColor),
         context,

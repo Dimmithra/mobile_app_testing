@@ -25,7 +25,7 @@ class HomeProvider extends ChangeNotifier {
         kHotelJson,
         context,
       );
-      dev.log(response.toString());
+      // dev.log(response.toString());
       HotelListResultModel temp =
           HotelListResultModel.fromJson(jsonDecode(response));
       if (temp.status == 200) {
@@ -34,7 +34,7 @@ class HomeProvider extends ChangeNotifier {
         SnackBarUtils.showSnackBar(context, message: temp.data.toString());
       }
     } catch (e) {
-      dev.log(e.toString());
+      // dev.log(e.toString());
     } finally {
       setloadHomePageData(false);
     }
@@ -57,7 +57,7 @@ class HomeProvider extends ChangeNotifier {
       final Uri googleUrl = Uri.parse(
           'https://www.google.com/maps/search/?api=1&query=$latitude,$longitude');
 
-      dev.log('Trying to launch: $googleUrl');
+      // dev.log('Trying to launch: $googleUrl');
       if (latitude != null && longitude != null) {
         launchUrl(
           googleUrl,
@@ -68,7 +68,7 @@ class HomeProvider extends ChangeNotifier {
             message: "Could Not Open google map ${googleUrl}");
       }
     } catch (e) {
-      dev.log("error-" + e.toString());
+      // dev.log("error-" + e.toString());
     } finally {}
   }
 }

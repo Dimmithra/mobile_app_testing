@@ -28,17 +28,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   Text(
                     "Welcome Back!",
                     style: TextStyle(
-                      color: kDefTextColor,
+                      color: const Color.fromARGB(255, 1, 66, 5),
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
                     ),
                   ),
                   Text(
-                    "Login",
+                    "Log in",
                     style: TextStyle(
                       color: kDefTextColor,
                       fontWeight: FontWeight.bold,
-                      fontSize: 24,
+                      fontSize: 20,
                     ),
                   ),
                   Row(
@@ -61,8 +61,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: authProvider.getsignInLoader
                         ? CommonLoader()
                         : Container(
-                            width: 180,
-                            height: 50,
+                            width: 220,
+                            height: 40,
                             decoration: BoxDecoration(
                                 color: kButtonColor,
                                 borderRadius: BorderRadius.circular(10)),

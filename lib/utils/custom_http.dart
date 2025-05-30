@@ -18,7 +18,7 @@ class CommonHttp {
     String? token = await storage.read(key: kSecureToken);
 
     try {
-      dev.log(token.toString());
+      // dev.log(token.toString());
       final response = await http.get(
         Uri.parse(endpoint),
         headers: {
@@ -34,7 +34,7 @@ class CommonHttp {
         return response.body;
       }
     } catch (error) {
-      dev.log('Error during GET request: $error');
+      // dev.log('Error during GET request: $error');
       throw Exception('Failed to load data: $error');
     }
   }
