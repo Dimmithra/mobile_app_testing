@@ -5,6 +5,7 @@ import 'package:mobile_app_test/providers/home_provider.dart';
 import 'package:mobile_app_test/utils/colors.dart';
 import 'package:mobile_app_test/utils/main_body.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mobile_app_test/widgets/common_loader.dart';
 import 'package:provider/provider.dart';
 
 class HotelDetailScreen extends StatefulWidget {
@@ -84,8 +85,9 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
                           ),
                         ),
                       ),
-                      placeholder: (context, url) =>
-                          const Center(child: CircularProgressIndicator()),
+                      placeholder: (context, url) => const Center(
+                        child: CommonLoader(),
+                      ),
                       errorWidget: (context, url, error) => const Image(
                         image: AssetImage("assets/images/hotel.png"),
                         fit: BoxFit.cover,
