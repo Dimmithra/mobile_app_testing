@@ -1,0 +1,1 @@
+const kSecureToken = "secureTokenKey";

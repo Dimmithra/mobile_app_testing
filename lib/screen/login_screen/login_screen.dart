@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: MediaQuery.of(context).size.width / 2,
                     child: InkWell(
                       onTap: () {
-                        authProvider.signInWithGoogle();
+                        authProvider.signInWithGoogle(context);
                       },
                       child: Container(
                         decoration: BoxDecoration(
