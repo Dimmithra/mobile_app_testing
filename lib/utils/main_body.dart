@@ -14,6 +14,7 @@ class MainBodyScreen extends StatefulWidget {
     this.endDrawer,
     this.bottomNavigationBar,
     this.appbar = true,
+    this.actions,
     this.floatingActionButton,
   });
   final Widget? appBarTitle;
@@ -27,7 +28,7 @@ class MainBodyScreen extends StatefulWidget {
   final Widget? bottomNavigationBar;
   final bool? appbar;
   final Widget? floatingActionButton;
-
+  final List<Widget>? actions;
   @override
   State<MainBodyScreen> createState() => _MainBodyScreenState();
 }
@@ -43,6 +44,7 @@ class _MainBodyScreenState extends State<MainBodyScreen> {
       drawer: widget.drawer,
       appBar: widget.appbar == true
           ? AppBar(
+              actions: widget.actions,
               toolbarHeight: widget.toolbarHeight,
               title: widget.appBarTitle,
               titleTextStyle: TextStyle(

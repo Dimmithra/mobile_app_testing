@@ -7,6 +7,7 @@ import 'dart:developer' as dev;
 import 'package:mobile_app_test/utils/custom_http.dart';
 import 'package:mobile_app_test/utils/url_constant.dart';
 import 'package:mobile_app_test/widgets/common_snackbar_message.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeProvider extends ChangeNotifier {
   bool loadHomePageData = false;
@@ -45,5 +46,28 @@ class HomeProvider extends ChangeNotifier {
   sethotelListResultModelData(val) {
     hotelListResultModelData = val;
     notifyListeners();
+  }
+
+  Future<void> openGoogleMap(
+    context, {
+    dynamic latitude,
+    dynamic longitude,
+  }) async {
+    try {
+      final Uri googleUrl = Uri.parse(
+          'https://www.google.com/maps/search/?api=1&query=$latitude,$longitude');
+      dev.log('Trying to launch: $googleUrl');
+      if (await canLaunchUrl(googleUrl)) {
+        launchUrl(
+          googleUrl,
+          mode: LaunchMode.externalApplication,
+        );
+      } else {
+        SnackBarUtils.showSnackBar(context,
+            message: "Could Not Open google map ${googleUrl}");
+      }
+    } catch (e) {
+      dev.log("error-" + e.toString());
+    } finally {}
   }
 }

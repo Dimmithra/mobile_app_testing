@@ -1,7 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_app_test/providers/home_provider.dart';
+import 'package:mobile_app_test/screen/Home_page/hotel_detail_screen.dart';
 import 'package:mobile_app_test/utils/main_body.dart';
+import 'package:mobile_app_test/widgets/common_list_card.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -53,42 +55,44 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(height: 8),
               Expanded(
-                child: ListView.builder(
-                  itemCount:
-                      homeProvider.gethotelListResultModelData!.data!.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                        height: 50,
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 4, horizontal: 8),
-                        color: Colors.white,
-                        child: Row(
-                          children: [
-                            CachedNetworkImage(
-                              imageUrl:
-                                  'https://via.placeholder.com/150', // fallback URL
-                              imageBuilder: (context, imageProvider) =>
-                                  Container(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: imageProvider,
-                                    fit: BoxFit.cover,
-                                    colorFilter: const ColorFilter.mode(
-                                      Colors.red,
-                                      BlendMode.colorBurn,
-                                    ),
+                child: homeProvider.gethotelListResultModelData != null
+                    ? ListView.builder(
+                        itemCount: homeProvider
+                            .gethotelListResultModelData!.data!.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return CommonListCard(
+                            imageurl: homeProvider.gethotelListResultModelData!
+                                .data![index].image!.small
+                                .toString(),
+                            title: homeProvider
+                                .gethotelListResultModelData!.data![index].title
+                                .toString(),
+                            address: homeProvider.gethotelListResultModelData!
+                                .data![index].address
+                                .toString(),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => HotelDetailScreen(
+                                    discription:
+                                        "${homeProvider.gethotelListResultModelData!.data![index].description}",
+                                    latitude:
+                                        "${homeProvider.gethotelListResultModelData!.data![index].latitude}",
+                                    longatude:
+                                        "${homeProvider.gethotelListResultModelData!.data![index].longitude}",
+                                    title:
+                                        "${homeProvider.gethotelListResultModelData!.data![index].title}",
+                                    largeImage:
+                                        "${homeProvider.gethotelListResultModelData!.data![index].image!.large}",
                                   ),
                                 ),
-                              ),
-                              placeholder: (context, url) => const Center(
-                                  child: CircularProgressIndicator()),
-                              errorWidget: (context, url, error) =>
-                                  const Icon(Icons.error),
-                            ),
-                          ],
-                        ));
-                  },
-                ),
+                              );
+                            },
+                          );
+                        },
+                      )
+                    : Text("No recode availabe"),
               ),
             ],
           );
