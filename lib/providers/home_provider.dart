@@ -49,18 +49,19 @@ class HomeProvider extends ChangeNotifier {
   }
 
   Future<void> openGoogleMap(
-    context, {
+    BuildContext context, {
     dynamic latitude,
     dynamic longitude,
   }) async {
     try {
       final Uri googleUrl = Uri.parse(
           'https://www.google.com/maps/search/?api=1&query=$latitude,$longitude');
+
       dev.log('Trying to launch: $googleUrl');
-      if (await canLaunchUrl(googleUrl)) {
+      if (latitude != null && longitude != null) {
         launchUrl(
           googleUrl,
-          mode: LaunchMode.externalApplication,
+          mode: LaunchMode.inAppWebView,
         );
       } else {
         SnackBarUtils.showSnackBar(context,
