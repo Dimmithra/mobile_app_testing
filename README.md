@@ -1,6 +1,6 @@
 # mobile_app_test
 
-A new Flutter project.
+A new Flutter project for flutter version 3.27.
 
 ## Getting Started
 
